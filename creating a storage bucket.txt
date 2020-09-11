@@ -1,0 +1,14 @@
+// Console and Cloud shell
+
+Objectives
+
+1. Create a Cloud Storage bucket using Cloud Shell.
+2. Become familiar with Cloud Shell features.
+
+// creating a cloud storage bucket
+
+gsutil mb gs://practice_project
+
+// copying a file into the created bucket
+
+gsutil cp example.txt gs://practice_project
