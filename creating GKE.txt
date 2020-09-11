@@ -1,0 +1,31 @@
+// create a Google Kubernetes Engine cluster containing several containers, each containing a web server.
+
+objectives
+
+1. Provision a Kubernetes cluster using Kubernetes engine 
+2. Deploy and manage Docker containers using kubctl
+
+// start a kubernetes engine cluster
+
+export MY_ZONE=us-central1-a
+
+gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
+
+kubectl version
+
+// Run and deploy a container
+
+kubectl create deploy nginx --image=nginx:1.17.10
+
+kubectl get pods
+
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+
+kubectl get services
+
+kubectl scale deployment nginx --replicas 3
+
+kubectl get pods
+
+kubectl get services
+
